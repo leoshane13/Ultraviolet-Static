@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultraviolet Proxy</title>
+  <meta name="description" content="Ultraviolet is a sophisticated web proxy for bypassing censorship." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- UV scripts -->
+  <script src="baremux/index.js" defer></script>
+  <script src="epoxy/index.js" defer></script>
+  <script src="uv/uv.bundle.js" defer></script>
+  <script src="uv/uv.config.js" defer></script>
+  <script src="register-sw.js" defer></script>
+  <script src="search.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <header style="text-align:center; padding:20px;">
+    <img src="uv.png" alt="Ultraviolet Logo" style="height:80px;">
+    <h1>Ultraviolet Proxy</h1>
+    <p>Bypass censorship. Browse freely with your own proxy site.</p>
+  </header>
+
+  <main style="max-width:600px; margin:0 auto; padding:20px;">
+    <form id="uv-form" style="display:flex; gap:10px;">
+      <input
+        id="uv-search-engine"
+        value="https://www.google.com/search?q=%s"
+        type="hidden"
+      />
+      <input
+        id="uv-address"
+        type="text"
+        placeholder="Enter URL or search query"
+        style="flex:1; padding:10px; font-size:16px;"
+      />
+      <button type="submit" style="padding:10px 16px;">Go</button>
+    </form>
+
+    <p id="uv-error" style="color:red; margin-top:10px;"></p>
+    <pre id="uv-error-code" style="color:gray;"></pre>
+  </main>
+
+  <footer style="text-align:center; padding:20px; font-size:14px; color:gray;">
+    Ultraviolet Proxy &copy; Titanium Network
+    |
+    <a href="https://github.com/titaniumnetwork-dev/Ultraviolet" target="_blank">GitHub</a>
+  </footer>
+
+  <iframe id="uv-frame" style="display:none;"></iframe>
+</body>
+</html>
